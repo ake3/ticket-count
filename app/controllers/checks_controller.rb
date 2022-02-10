@@ -1,5 +1,6 @@
 class ChecksController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new,:index]
+  
   def index
     @check = Check.new
     @checks = Check.includes(:user)  

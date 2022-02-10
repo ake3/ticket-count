@@ -38,7 +38,11 @@
       <%= current_user.name %>
       </div>
     <% end %>
-
-  <%= f.submit"確認", class:"check-btn" %>
+  
+    <% if current_user.position == "count" %>
+      <div class = "alert">count担当者は入力できません。</div>
+    <% else %>
+      <%= f.submit"確認", class:"check-btn" %>
+    <% end %>
   <% end %>
  </div>

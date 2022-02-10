@@ -127,3 +127,9 @@ input[type="number"]{
 .unused-sum{
   background-color: coral;
 }
+
+.alert{
+  margin-top: 20px;
+  font-size: 25px;
+  color: red;
+}
