@@ -51,6 +51,7 @@ ul,li{
 .lists{
   font-size: 24px;
   display: flex;
+  list-style: none;
 }
 .login,.sign-up,.logout{
   color: black;
@@ -79,13 +80,23 @@ a{
   width: 150px;
   text-decoration: underline solid black;
 }
-.handed-date{
-  padding-left: 10px;
+
+.handed-date,.check-date{
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
 }
+input[type="number"]{
+  font-size: 30px;
+  height: 40px;
+}
+
 .enter-btn,.check-btn{
+  height: 40px;
   margin-top: 30px;
-  padding: 0 138px;
+  padding: 0 134px;
   background-color:lightskyblue;
+  font-size: 25px;
 }
 .explain-text{
   font-size: 20px;
