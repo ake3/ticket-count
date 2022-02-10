@@ -1,0 +1,38 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.devise-contents{  
+  width: 60vw;
+  margin: 60px auto;
+  font-size: 24px;
+  border: solid 1px blue;
+}
+
+.login-title,.new-title{
+  color: black;
+  background-color: palegoldenrod;
+  height: 80px;
+  font-size: 40px;
+  padding-left: 0px;
+}
+
+.field{
+  padding: 20px;
+}
+
+.field input[type="email"],input[type="password"],input[type="text"] {
+  width: 100%;
+}
+
+.actions input[type="submit"] {
+  margin: 60px 20px;
+  width: 50%;
+  background-color: cadetblue;  
+}
+
+#error_explanation{
+  color: red;
+  font-size: 18px;
+}

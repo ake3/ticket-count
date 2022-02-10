@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="signup.css">
+<div class="devise-contents">
+  <h2 class="login-title">食券管理</h2>
+  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <div class="field">
+      <%= f.label :email, "登録メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "パスワード" %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "ログイン" %>
+    </div>
+  <% end %>
+</div>

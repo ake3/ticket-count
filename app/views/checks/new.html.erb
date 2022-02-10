@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <title>TicketCount</title>
+  </head>
+ <body>
+ <header class = 'page-header'>
+   <div class = 'title-contents'>
+     <h2 class ='service-title'>食券管理</h2>
+   </div>
+   <div class = "nav">
+    <ul class = "lists">
+      <% if user_signed_in? %>
+        <li><%= link_to 'カウントページへ', new_count_path, class:"li-count" %></li>
+        <li><%= link_to '一覧ページへ', counts_path, class:"li-index" %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class:"login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up" %></li>
+      <% end %>
+    </ul>
+   </div>
+ </header>
+
+ <div class = "check-form">
+  <p class="explain-text">必要事項入力後<span class="enter-explain">確認ボタン</span>をクリックして下さい。</p>
+  <%= form_with(model: @check, local:true) do |f| %>
+  <div class="check-text">
+    確認日
+  </div>
+  <%= f.date_select :check_date, class:"check-date", use_month_numbers: true %>
+  <div class="check-text">
+    入荷
+  </div>
+  <%= f.number_field :arrival, class:"arrival", min:1 %>
+  
+  
+  <div class="check-name">
+    <% if user_signed_in? %>
+      <div class="check-text">
+        入力者
+      </div>
+      <div class="current-name">
+      <%= current_user.name %>
+      </div>
+    <% end %>
+
+  <%= f.submit"確認", class:"check-btn" %>
+  <% end %>
+ </div>
+ </body>
+</html>

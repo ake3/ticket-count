@@ -13,3 +13,106 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+} 
+
+body{
+  font-size: 30px;
+  color: #333;
+  margin: 0 auto;
+}
+h2{
+  padding: 10px 0;
+  margin: 0;
+}
+ul,li{
+  padding: 0;
+  margin: 0;
+}
+
+.page-header{
+  height: 100px;
+  background-color:palegoldenrod;
+  display: flex;
+}
+.title-contents{
+  width: 40vw;  
+}
+.service-title{
+  font-size: 50px;
+  padding: 12px 35px;
+}
+.nav{
+  width: 60vw;  
+  padding: 25px;
+}
+.lists{
+  font-size: 24px;
+  display: flex;
+}
+.login,.sign-up,.logout{
+  color: black;
+  background-color: cadetblue;
+  padding: 10px;
+}
+.li-count,.li-check,.li-index{
+  color:black;
+  background-color:olivedrab;
+  padding: 10px;
+}
+a{
+  display: block;
+  border-radius: 50%; 
+  padding: 10px;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+.enter-form{
+  height: 500px;  
+  padding-left: 10px;
+}
+.enter-text,.check-text{
+  margin: 10px 0;
+  width: 150px;
+  text-decoration: underline solid black;
+}
+.handed-date{
+  padding-left: 10px;
+}
+.enter-btn,.check-btn{
+  margin-top: 30px;
+  padding: 0 138px;
+  background-color:lightskyblue;
+}
+.explain-text{
+  font-size: 20px;
+  font-style: italic;
+}
+.enter-explain{
+  text-decoration: underline lightskyblue;
+}
+
+.title{
+  text-decoration: underline olivedrab;  
+}
+.index{
+  border: solid olivedrab 1.5px;
+}
+.count-contents{
+  display: flex;  
+}
+.check-contents{
+  display: flex;
+  margin-top: 20px;
+  border-top: solid olivedrab 1.5px;
+}
+.list{
+  list-style: none;
+  margin-left: 15px;  
+}
+.unused-sum{
+  background-color: coral;
+}

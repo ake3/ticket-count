@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <meta charset="UTF-8">  
+    <title>TicketCount</title>
+  </head>
+ <body>
+ <header class = 'page-header'>
+   <div class = 'title-contents'>
+     <h2 class ='service-title'>食券管理</h2>
+   </div>
+   <div class = "nav">
+    <ul class = "lists">
+      <% if user_signed_in? %>
+        <li><%= link_to 'カウントページへ', new_count_path, class:"li-check" %></li>
+        <li><%= link_to 'チェックページへ', new_check_path, class:"li-check" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class:"login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up" %></li>
+      <% end %>
+    </ul>
+   </div>
+ </header>
+
+<h2 class="title">入力一覧</h2>
+
+<div class= "index">
+  <div class="count-contents">
+    <ul class="count-lists">
+    <% @counts.each do |count| %>
+      <li class="list">
+      <div class="enter-text">
+        配布日
+      </div>
+      <%= count.date %>
+    
+      <div class="enter-text">
+        準備枚数
+      </div>
+      <%= count.prepared_number %>
+
+      <div class="enter-text">
+        配布枚数
+      </div>
+      <%= count.handed_number %>
+    
+      <div class="enter-text">
+        未使用
+      </div>
+      <%= count.unused %>
+      <div class="enter-text">
+        入力者
+      </div>
+      <div class="enter-name">
+      <%= count.user.name %>
+      </div>
+    </li>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="check-contents">
+    <ul class="check-lists">
+    <% @checks.each do |check| %>
+      <li class="list">
+      <div class="check-text">
+        確認日
+      </div>
+      <%= check.check_date %>
+    
+      <div class="check-text">
+        入荷
+      </div>
+      <%= check.arrival %>
+
+      <div class="check-text">
+        在庫
+      </div>
+      <%= check.stock %>
+      <div class="enter-text">
+        確認者
+      </div>
+      <div class="check-name">
+      <%= check.user.name %>
+      </div>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>
+  
+  <div class= "unused-sum">
+    <%= "未使用分：#{@unused_total}" %>
+  </div>
