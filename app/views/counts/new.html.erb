@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <title>TicketCount</title>
+  </head>
+ <body>
+ <header class = 'page-header'>
+   <div class = 'title-contents'>
+     <h2 class ='service-title'>食券管理</h2>
+   </div>
+   <div class = "nav">
+    <ul class = "lists">
+      <% if user_signed_in? %>
+        <li><%= link_to 'チェックページへ', new_check_path, class:"li-check" %></li>
+        <li><%= link_to '一覧ページへ', counts_path, class:"li-index" %>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class:"login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up" %></li>
+      <% end %>
+    </ul>
+   </div>
+ </header>
+
+ <div class = "enter-form">
+  <p class="explain-text">必要事項入力後<span class="enter-explain">入力ボタン</span>をクリックして下さい。</p>
+    <%= form_with(model: @count, local:true) do |f| %>
+        <div class="enter-text">
+          配布日
+        </div>
+        <%= f.date_select :date, class:"handed-date", use_month_numbers: true %>
+      <div class="enter-text">
+        準備枚数
+      </div>
+      <%= f.number_field :prepared_number, class:"prepare", min:1 %>
+      <div class="enter-text">
+        配布枚数
+      </div>
+      <%= f.number_field :handed_number, class:"handed-number", min:1 %>
+      <div class="enter-text">
+        未使用
+      </div>
+      <%= f.number_field :unused, class:"not", min:0 %>
+
+      <div class="enter-name">
+        <% if user_signed_in? %>
+        <div class="enter-text">
+          入力者
+        </div>
+        <div class="current-name">
+        <%= current_user.name %>
+        </div>
+        <% end %>
+      <%= f.submit"入力", class:"enter-btn" %>
+    <% end %>
+  </div>
+ </body>
+</html>
