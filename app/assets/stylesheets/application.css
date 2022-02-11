@@ -107,7 +107,8 @@ input[type="number"]{
 }
 
 .title{
-  text-decoration: underline olivedrab;  
+  text-decoration: underline olivedrab; 
+  font-size: 35px; 
 }
 .index{
   border: solid olivedrab 1.5px;
