@@ -20,6 +20,12 @@ class CountsController < ApplicationController
     end
   end
 
+  def destroy_all
+    Check.destroy_all
+    Count.destroy_all
+    redirect_to counts_path
+  end  
+
   private
 
   def count_params

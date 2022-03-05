@@ -16,8 +16,14 @@
    </div>
  </header>
 
-<h2 class="title">入力一覧</h2>
-
+<div class= "index-title-contents">
+  <h2 class= "title">入力一覧</h2>
+  <div class= "delete-button"></div>
+    <% if current_user.position == "check" %>
+      <%= button_to "削除", destroy_all_counts_path, method: :delete, class:"button", data:{confirm: "全入力データを削除しますか？"} %>
+    <% end %>
+  </div>
+</div>
 <div class= "index">
   <div class="count-contents">
     <ul class="count-lists">

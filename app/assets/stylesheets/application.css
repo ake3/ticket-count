@@ -106,16 +106,25 @@ input[type="number"]{
   text-decoration: underline lightskyblue;
 }
 
+.count-contents{
+  display: flex;  
+}
 .title{
   text-decoration: underline olivedrab; 
   font-size: 35px; 
 }
-.index{
-  border: solid olivedrab 1.5px;
+.index-title-contents{
+  display: flex;
+  align-items: center;
 }
-.count-contents{
-  display: flex;  
+.delete-button{
+  margin-left: 30px ;  
 }
+.button{
+  background:yellow;
+  font-size: 23px;
+}
+
 .check-contents{
   display: flex;
   margin-top: 20px;
