@@ -7,18 +7,19 @@ https//ticket-count.herokuapp.com/
 ## ID/Pass
 ID:admin, Pass:1234
 ## テスト用アカウント
-checkユーザー  メールアドレス:check@gmail.com,パスワード：c11111
+checkユーザー  メールアドレス:check@gmail.com,パスワード：c11111  
 countユーザー  メールアドレス:count@gmail.com,パスワード：c22222
 ## 利用方法
 食事券の枚数を入力し、数を管理するためのアプリです。
 ## 目指した課題解決
-専用用紙一枚に記入して管理しており、度々記入ミスが発生している現状を改善するために、
+専用用紙一枚に記入して管理しており、度々記入ミスが発生している現状を改善するために  
 シンプルで使い易いシステムを目指しました。
 ## 洗い出した要件
-ユーザー登録機能：カウント担当、チェック担当のユーザー登録
-枚数カウント機能：食券の利用枚数の登録
+ユーザー登録機能：カウント担当、チェック担当のユーザー登録  
+枚数カウント機能：食券の利用枚数の登録  
 枚数チェック機能、一覧機能：食券の入荷枚数の登録、未使用分・在庫の確認
-## 実装した機能　画像・GIF　DEMO
+一括削除機能：入力枚数の一括削除
+## 実装した機能
 トップ画面
 [![Image from Gyazo](https://i.gyazo.com/b277a61d0bb5c3c7f577a40c52cf3a34.png)](https://gyazo.com/b277a61d0bb5c3c7f577a40c52cf3a34)
 
@@ -32,7 +33,8 @@ countユーザー  メールアドレス:count@gmail.com,パスワード：c2222
 [![Image from Gyazo](https://i.gyazo.com/0830482600199cad88bf0a4d90138c32.gif)](https://gyazo.com/0830482600199cad88bf0a4d90138c32)
 ログアウト
 [![Image from Gyazo](https://i.gyazo.com/77872043ae0393122b8b200affbef09c.gif)](https://gyazo.com/77872043ae0393122b8b200affbef09c)
-
+一括削除
+[![Image from Gyazo](https://i.gyazo.com/281f0710bfb012774358f7434f5c0885.gif)](https://gyazo.com/281f0710bfb012774358f7434f5c0885)
 
 ## 実装予定
 入力情報の編集機能
@@ -76,6 +78,6 @@ countユーザー  メールアドレス:count@gmail.com,パスワード：c2222
 - belongs_to :user
 
 ## ローカルでの動作方法、パッケージ
-git clone https://github.com/ake3/ticket-count.git
+git clone https://github.com/ake3/ticket-count.git  
 動作確認：上記テスト用アカウントにてログイン→必要事項を入力、一覧画面を確認
 開発環境：Ruby/Ruby on Rails(6.0.4.4)/MySQL/Github/Visual Studio Code
